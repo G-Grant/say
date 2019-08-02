@@ -1,0 +1,26 @@
+{
+  "name": "say",
+  "version": "1.0.0",
+  "description": "手写一个 koa",
+  "main": "index.js",
+  "scripts": {
+    "start:say": "supervisor -w lib/ index",
+    "start:koa": "supervisor -w node_modules/koa/ koa-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G-Grant/say.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/G-Grant/say/issues"
+  },
+  "homepage": "https://github.com/G-Grant/say#readme",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "koa": "^2.7.0",
+    "supervisor": "^0.12.0"
+  }
+}
