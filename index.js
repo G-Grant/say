@@ -4,7 +4,7 @@ const port = 7878;
 const chalk = require('chalk');
 
 app.use((ctx)=>{
-    ctx.body = 'Hello, Koa';
+    ctx.body = 'Hello, Say';
 }).listen(port, ()=>{
     console.log(chalk.yellowBright(`say 服务已经监听${port}`))
 });
