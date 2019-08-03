@@ -5,14 +5,16 @@ const port = 8989;
 
 app.use(async (ctx, next)=>{
     console.log('开始执行 1')
+    next();
 })
 
 app.use(async (ctx, next)=>{
-    console.log(2)
+    console.log('开始执行 2')
+    next();
 })
 
-app.use(async (ctx)=>{
-    console.log(3)
+app.use(async (ctx, next)=>{
+    console.log('开始执行 3')
     ctx.body = 'Hello, Koa';
 })
 

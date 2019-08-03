@@ -49,3 +49,30 @@
         ...
     }
     ```
+
+3. koa 核心方法 compose
+
+    - middleware 为数组，且数组每一项均为函数
+    - compose 返回一个函数，这个函数会依次调用 middleware 中每一项（前提是调用 next 方法）
+
+        ```js
+        return function (context, next) {
+            // last called middleware #
+            let index = -1
+            return dispatch(0)
+
+            function dispatch(i) {
+                if (i <= index) return Promise.reject(new Error('next() called multiple times'))
+                index = i
+                let fn = middleware[i]
+                if (i === middleware.length) fn = next
+                if (!fn) return Promise.resolve()
+                try {
+                    return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));
+                } catch (err) {
+                    return Promise.reject(err)
+                }
+            }
+        }
+        ```
+
