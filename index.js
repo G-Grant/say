@@ -6,6 +6,7 @@ const chalk = require('chalk');
 app.use(async (ctx, next)=>{
     console.log(1)
     next();
+    next();
 })
 
 app.use(async (ctx, next)=>{

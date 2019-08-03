@@ -6,6 +6,7 @@ const port = 8989;
 app.use(async (ctx, next)=>{
     console.log('开始执行 1')
     next();
+    next();
 })
 
 app.use(async (ctx, next)=>{
