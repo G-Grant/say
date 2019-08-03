@@ -4,8 +4,8 @@
   "description": "手写一个 koa",
   "main": "index.js",
   "scripts": {
-    "start:say": "supervisor -w lib/ index",
-    "start:koa": "supervisor -w node_modules/koa/ koa-test"
+    "start:say": "supervisor index",
+    "start:koa": "supervisor koa-test"
   },
   "repository": {
     "type": "git",
