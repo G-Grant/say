@@ -40,7 +40,9 @@
     if (!this.listenerCount('error')) this.on('error', this.onerror);
     ```
 
-2. 为什么要把 status 在相应之前设置为 404
+    Node 没有错误事件监听。
+
+2. 为什么要把 status 在响应之前设置为 404
 
     ```js
     handleRequest(ctx, fnMiddleware) {
@@ -49,6 +51,8 @@
         ...
     }
     ```
+
+    默认设置为 `404`，当执行 `ctx.body`，会执行到 `response` 文件的 `set body(){}` 方法，里面会判断是否自己设置了 `status`，如果没有，则又设置成 `200`。
 
 3. koa 核心方法 compose
 

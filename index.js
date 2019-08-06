@@ -5,18 +5,21 @@ const chalk = require('chalk');
 
 app.use(async (ctx, next)=>{
     console.log(1)
-    next();
-    next();
+    await next();
+    console.log(4)
 })
 
 app.use(async (ctx, next)=>{
     console.log(2)
-    next();
+    await next();
+    console.log(5)
 })
 
-app.use(async (ctx)=>{
+app.use(async (ctx, next)=>{
     console.log(3)
+    await next();
     ctx.body = 'Hello, Say';
+    console.log(6)
 })
 
 app.listen(port, ()=>{
