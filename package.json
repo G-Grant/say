@@ -20,7 +20,7 @@
   "homepage": "https://github.com/G-Grant/say#readme",
   "devDependencies": {
     "chalk": "^2.4.2",
-    "koa": "^2.7.0",
+    "koa": "^3.0.1",
     "supervisor": "^0.12.0"
   }
 }
